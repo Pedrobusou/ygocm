@@ -1,8 +1,8 @@
-import React from "react";
-import "./header.scss";
-import CardNameFilter from "../filters/CardNameFilter/CardNameFilter";
+import React from 'react';
+import './header.scss';
+import CardNameFilter from '../filters/CardNameFilter/CardNameFilter';
 
-const Header = () => {
+const Header = ({searchCards}) => {
   return (
     <header>
       <div className="row">
@@ -24,7 +24,7 @@ const Header = () => {
         </div>
 
         <div className="col">
-          <CardNameFilter />
+          <CardNameFilter searchCards={searchCards} />
         </div>
 
         <div className="col text-right">
