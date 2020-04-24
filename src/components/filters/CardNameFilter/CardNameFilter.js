@@ -19,6 +19,7 @@ const CardNameFilter = ({searchCards}) => {
         placeholder="Introduce card name"
         onChange={handleChange}
         value={cardName}
+        required
       />
     </form>
   );
