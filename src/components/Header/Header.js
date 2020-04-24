@@ -2,7 +2,7 @@ import React from 'react';
 import './header.scss';
 import CardNameFilter from '../filters/CardNameFilter/CardNameFilter';
 
-const Header = ({searchCards}) => {
+const Header = ({searchCards, loading}) => {
   return (
     <header>
       <div className="row">
@@ -24,7 +24,18 @@ const Header = ({searchCards}) => {
         </div>
 
         <div className="col">
-          <CardNameFilter searchCards={searchCards} />
+          <div className="row">
+            <div className="col">
+              <CardNameFilter searchCards={searchCards} />
+            </div>
+            <div className="col-1">
+              {loading ? (
+                <div className="spinner-border" role="status">
+                  <span className="sr-only">Loading...</span>
+                </div>
+              ) : null}
+            </div>
+          </div>
         </div>
 
         <div className="col text-right">
