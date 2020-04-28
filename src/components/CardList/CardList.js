@@ -1,19 +1,12 @@
 import React from 'react';
 import './cardList.scss';
+import Card from '../Card/Card';
 
 const CardList = ({cards}) => {
   return (
     <>
       {cards.length ? (
-        cards.map(card => (
-          <a key={card.id} data-name={card.id} href="#">
-            <img
-              className="card-img"
-              src={card.card_images[0].image_url_small}
-              alt={card.name}
-            />
-          </a>
-        ))
+        cards.map(card => <Card card={card} key={card.id} />)
       ) : (
         <div className="text-center">No cards found</div>
       )}

@@ -10,6 +10,7 @@ const App = () => {
 
   const apiSearch = 'https://db.ygoprodeck.com/api/v5/cardinfo.php?fname=';
 
+  //Could be turned into customHook with useeffect and filters state obj
   const searchCards = async filters => {
     setLoading(true);
 
