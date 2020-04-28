@@ -1,16 +1,15 @@
-import React, { useState } from "react";
+import React, {useState} from 'react';
 
-const CardNameFilter = () => {
-  const [cardName, setCardName] = useState("");
+const CardNameFilter = ({searchCards}) => {
+  const [cardName, setCardName] = useState('');
 
-  const handleChange = (event) => {
+  const handleChange = event => {
     setCardName(event.target.value);
   };
 
   const handleSubmit = event => {
     event.preventDefault();
-    //TODO: perform ajax call
-    console.log(`search for "${cardName}"`);
+    searchCards({cardName});
   };
 
   return (
@@ -20,6 +19,7 @@ const CardNameFilter = () => {
         placeholder="Introduce card name"
         onChange={handleChange}
         value={cardName}
+        required
       />
     </form>
   );

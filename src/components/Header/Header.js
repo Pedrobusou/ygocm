@@ -1,20 +1,29 @@
-import React from "react";
-import "./header.scss";
-import CardNameFilter from "../filters/CardNameFilter/CardNameFilter";
+import React from 'react';
+import './header.scss';
+import CardNameFilter from '../filters/CardNameFilter/CardNameFilter';
+import DropdownButton from 'react-bootstrap/DropdownButton';
+import Dropdown from 'react-bootstrap/Dropdown';
+import MyMenu from './MyMenu';
 
-import DropdownButton from "react-bootstrap/DropdownButton";
-import Dropdown from "react-bootstrap/Dropdown";
-
-import MyMenu from "./MyMenu";
-
-const Header = () => {
+const Header = ({searchCards, loading}) => {
   return (
     <header>
       <div className="row">
         <MyMenu />
 
         <div className="col">
-          <CardNameFilter />
+          <div className="row">
+            <div className="col">
+              <CardNameFilter searchCards={searchCards} />
+            </div>
+            <div className="col-1">
+              {loading ? (
+                <div className="spinner-border" role="status">
+                  <span className="sr-only">Loading...</span>
+                </div>
+              ) : null}
+            </div>
+          </div>
         </div>
 
         <div className="col text-right">
