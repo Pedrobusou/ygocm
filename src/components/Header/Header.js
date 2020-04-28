@@ -9,7 +9,9 @@ const Header = ({searchCards, loading}) => {
   return (
     <header>
       <div className="row">
-        <MyMenu />
+        <div className="col">
+          <MyMenu />
+        </div>
 
         <div className="col">
           <div className="row">
