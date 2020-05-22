@@ -1,16 +1,51 @@
 import React from "react";
 
-import DropdownButton from "react-bootstrap/DropdownButton";
-import Dropdown from "react-bootstrap/Dropdown";
 import "./dark_overlay.css";
+
+import SideNav, { Toggle, Nav, NavItem, NavIcon, NavText } from '@trendmicro/react-sidenav';
+import '@trendmicro/react-sidenav/dist/react-sidenav.css';
+
 
 const MyMenu = () => {
   return (
-    <DropdownButton id="dropdown-basic-button" title="Show menu">
-      <Dropdown.Item href="#/action-1">Collection</Dropdown.Item>
-      <Dropdown.Item href="#/action-2">Wish list</Dropdown.Item>
-      <Dropdown.Item href="#/action-3">Deck creator</Dropdown.Item>
-    </DropdownButton>
+    <SideNav
+      onSelect={(selected) => {
+        // Add your code here
+      }}
+    >
+      <SideNav.Toggle />
+      <SideNav.Nav defaultSelected="home">
+        {/*------------ Home -------------- */}
+        <NavItem eventKey="home">
+          <NavIcon>
+            <i className="fa fa-fw fa-home" style={{ fontSize: '1.75em' }} />
+          </NavIcon>
+          <NavText>
+            Home
+            </NavText>
+        </NavItem>
+        {/* -----------------------------
+         ---------- Card list ----------- */}
+        <NavItem eventKey="charts">
+          <NavIcon>
+            <i className="fa fa-fw fa-line-chart" style={{ fontSize: '1.75em' }} />
+          </NavIcon>
+          <NavText>
+            Card List
+            </NavText>
+        </NavItem>
+        {/* -----------------------------
+         ---------- Decks ----------- */}
+        <NavItem eventKey="charts">
+          <NavIcon>
+            <i className="fa fa-fw fa-line-chart" style={{ fontSize: '1.75em' }} />
+          </NavIcon>
+          <NavText>
+            Decks
+            </NavText>
+        </NavItem>
+      </SideNav.Nav>
+    </SideNav>
   );
 };
 
