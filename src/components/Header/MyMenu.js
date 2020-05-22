@@ -2,9 +2,10 @@ import React from "react";
 
 import "./dark_overlay.css";
 
+//import ClickOutside from '../index'
+
 import SideNav, { Toggle, Nav, NavItem, NavIcon, NavText } from '@trendmicro/react-sidenav';
 import '@trendmicro/react-sidenav/dist/react-sidenav.css';
-
 
 const MyMenu = () => {
   return (
@@ -26,7 +27,7 @@ const MyMenu = () => {
         </NavItem>
         {/* -----------------------------
          ---------- Card list ----------- */}
-        <NavItem eventKey="charts">
+        <NavItem eventKey="card_list">
           <NavIcon>
             <i className="fa fa-fw fa-line-chart" style={{ fontSize: '1.75em' }} />
           </NavIcon>
@@ -36,12 +37,22 @@ const MyMenu = () => {
         </NavItem>
         {/* -----------------------------
          ---------- Decks ----------- */}
-        <NavItem eventKey="charts">
+        <NavItem eventKey="decks">
           <NavIcon>
             <i className="fa fa-fw fa-line-chart" style={{ fontSize: '1.75em' }} />
           </NavIcon>
           <NavText>
             Decks
+            </NavText>
+        </NavItem>
+        {/* -----------------------------
+         ---------- Lista de cartas deseadas ----------- */}
+        <NavItem eventKey="wish_list">
+          <NavIcon>
+            <i className="fa fa-fw fa-line-chart" style={{ fontSize: '1.75em' }} />
+          </NavIcon>
+          <NavText>
+            Cartas deseadas
             </NavText>
         </NavItem>
       </SideNav.Nav>
