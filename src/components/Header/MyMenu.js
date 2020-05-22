@@ -9,10 +9,12 @@ import '@trendmicro/react-sidenav/dist/react-sidenav.css';
 
 const MyMenu = () => {
   return (
+
     <SideNav
       onSelect={(selected) => {
         // Add your code here
       }}
+      className="has-overlay"
     >
       <SideNav.Toggle />
       <SideNav.Nav defaultSelected="home">
@@ -57,6 +59,7 @@ const MyMenu = () => {
         </NavItem>
       </SideNav.Nav>
     </SideNav>
+
   );
 };
 
