@@ -5,13 +5,15 @@ import DropdownButton from 'react-bootstrap/DropdownButton';
 import Dropdown from 'react-bootstrap/Dropdown';
 import MyMenu from './MyMenu';
 
-const Header = ({searchCards, loading}) => {
+const Header = ({ searchCards, loading }) => {
   return (
     <header>
+      <MyMenu />
+
+      {/*Esto hay que dejarlo para que la barra de búsqueda no se vaya a tomar por culo */}
       <div className="row">
-        <div className="col">
-          <MyMenu />
-        </div>
+        <div className="col"></div>
+        {/*-----------------------------*/}
 
         <div className="col">
           <div className="row">
