@@ -7,9 +7,10 @@ import NavMenu from './Menu/NavMenu';
 const Header = ({ searchCards, loading }) => {
   return (
     <header>
-      <NavMenu />
-
       <div className="row">
+        <NavMenu />
+
+        {/*If navmenu is inside the "col" above, the menu will apear in the screen corner*/}
         <div className="col"></div>
 
         <div className="col">
