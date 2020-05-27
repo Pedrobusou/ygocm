@@ -3,22 +3,20 @@ import styled from 'styled-components';
 
 const Menu = ({ open }) => {
   return (
-    <>
-      <StyledMenu open={open}>
-        <a href="/">
-          Home
+    <StyledMenu open={open}>
+      <a href="/">
+        Home
       </a>
-        <a href="/">
-          Deck editor
+      <a href="/">
+        Deck editor
         </a>
-        <a href="/">
-          Wishlist
+      <a href="/">
+        Wishlist
         </a>
-        <a href="/">
-          Card trade
+      <a href="/">
+        Card trade
         </a>
-      </StyledMenu>
-    </>
+    </StyledMenu>
   )
 }
 
@@ -31,7 +29,6 @@ const Burger = ({ open, setOpen }) => {
     </StyledBurger>
   )
 }
-
 
 const NavMenu = () => {
   const [open, setOpen] = useState(false);
