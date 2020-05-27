@@ -1,6 +1,5 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import styled from 'styled-components';
-//import "./NavMenu.css";
 
 const Menu = ({ open }) => {
   return (
@@ -35,8 +34,8 @@ const Burger = ({ open, setOpen }) => {
 
 
 const NavMenu = () => {
-  const [open, setOpen] = React.useState(false);
-  const node = React.useRef();
+  const [open, setOpen] = useState(false);
+  const node = useRef();
   return (
     <div ref={node}>
       <Burger open={open} setOpen={setOpen} />
