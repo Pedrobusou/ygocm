@@ -1,8 +1,6 @@
 import React from 'react';
 import './header.scss';
 import CardNameFilter from '../filters/CardNameFilter/CardNameFilter';
-//import DropdownButton from 'react-bootstrap/DropdownButton';
-//import Dropdown from 'react-bootstrap/Dropdown';
 import NavMenu from './Menu/NavMenu';
 
 
@@ -11,10 +9,8 @@ const Header = ({ searchCards, loading }) => {
     <header>
       <NavMenu />
 
-      {/*Esto hay que dejarlo para que la barra de búsqueda no se vaya a tomar por culo */}
       <div className="row">
         <div className="col"></div>
-        {/*-----------------------------*/}
 
         <div className="col">
           <div className="row">
