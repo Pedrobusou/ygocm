@@ -1,0 +1,10 @@
+.nav-menu-btn {
+  background: none;
+  border: none;
+  outline: none;
+  transition: all 0.5s;
+
+  &.open {
+    transform: rotate(90deg);
+  }
+}
