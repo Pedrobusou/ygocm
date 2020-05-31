@@ -36,9 +36,7 @@ const App = () => {
       <Router>
         <Header searchCards={searchCards} loading={loading} />
         <Switch>
-          <Route path="/">
-            <CardList cards={cards} />
-          </Route>
+
           <Route path="/decklist">
             <h1>Esta es la página de deck list</h1>
             {/* Here will be the component */}
@@ -47,8 +45,15 @@ const App = () => {
             <h1>Esta es la página de wish list</h1>
             {/* Here will be the component */}
           </Route>
-          {/* All new pages should be here, the order is important
+          {/* All new pages should be here, the order is important,
           the first one must be the homepage */}
+
+          {/* Home should be at the end right now. If you put it the first one
+          card list will appear in all pages */}
+
+          <Route path="/">
+            <CardList cards={cards} />
+          </Route>
         </Switch>
       </Router>
     </>
