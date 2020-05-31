@@ -4,6 +4,13 @@ import axios from 'axios';
 import CardList from './components/CardList/CardList';
 import Header from './components/Header/Header';
 
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link
+} from "react-router-dom";
+
 const App = () => {
   const [cards, setCards] = useState([]);
   const [loading, setLoading] = useState(false);
