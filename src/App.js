@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 import './App.css';
 import axios from 'axios';
 import CardList from './components/CardList/CardList';
@@ -25,7 +25,7 @@ const App = () => {
 
     try {
       newCards = (await axios(apiSearch + filters.cardName)).data;
-    } catch (error) {}
+    } catch (error) { }
 
     setCards(newCards);
     setLoading(false);
@@ -33,8 +33,18 @@ const App = () => {
 
   return (
     <>
-      <Header searchCards={searchCards} loading={loading} />
-      <CardList cards={cards} />
+      <Router>
+        <Header searchCards={searchCards} loading={loading} />
+        <Switch>
+          <Route path="">
+            <CardList cards={cards} />
+          </Route>
+          <Route path="/decklist">
+            <h1>Esta es la página de deck list</h1>
+            {/* Here will be the component */}
+          </Route>
+        </Switch>
+      </Router>
     </>
   );
 };
