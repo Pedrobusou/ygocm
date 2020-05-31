@@ -2,7 +2,7 @@ import React from 'react';
 import NavMenuBtn from '../NavMenuBtn/NavMenuBtn';
 import './navMenu.scss';
 
-const NavMenu = ({isOpen, setIsOpen}) => {
+const NavMenu = ({ isOpen, setIsOpen }) => {
   return (
     <div className={isOpen ? 'nav-menu open' : 'nav-menu'}>
       <div className="nav-menu__item">
@@ -14,11 +14,11 @@ const NavMenu = ({isOpen, setIsOpen}) => {
       </a>
 
       <a className="nav-menu__item" href="/">
-        Home
+        Deck list
       </a>
 
       <a className="nav-menu__item" href="/">
-        Home
+        Wishlist
       </a>
 
       <a className="nav-menu__item" href="/">
