@@ -1,6 +1,8 @@
 import React from 'react';
 import NavMenuBtn from '../NavMenuBtn/NavMenuBtn';
 import './navMenu.scss';
+import { Link } from "react-router-dom";
+
 
 const NavMenu = ({ isOpen, setIsOpen }) => {
   return (
@@ -9,20 +11,22 @@ const NavMenu = ({ isOpen, setIsOpen }) => {
         <NavMenuBtn isOpen={isOpen} setIsOpen={setIsOpen} />
       </div>
 
-      <a className="nav-menu__item" href="/">
-        Home
+      <a className="nav-menu__item" >
+        <Link to="/">
+          Home
+        </Link>
       </a>
 
       <a className="nav-menu__item" href="/">
-        Deck list
+        <Link to="/decklist">
+          Deck list
+        </Link>
       </a>
 
       <a className="nav-menu__item" href="/">
-        Wishlist
-      </a>
-
-      <a className="nav-menu__item" href="/">
-        Home
+        <Link to="/wishlist">
+          Wishlist
+        </Link>
       </a>
     </div>
   );
