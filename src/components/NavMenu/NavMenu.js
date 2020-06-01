@@ -11,23 +11,18 @@ const NavMenu = ({ isOpen, setIsOpen }) => {
         <NavMenuBtn isOpen={isOpen} setIsOpen={setIsOpen} />
       </div>
 
-      <a className="nav-menu__item" >
-        <Link to="/">
-          Home
-        </Link>
-      </a>
+      <Link to="/" className="nav-menu__item" >
+        Home
+      </Link>
 
-      <a className="nav-menu__item" href="/">
-        <Link to="/decklist">
-          Deck list
-        </Link>
-      </a>
+      <Link to="/decklist" className="nav-menu__item" >
+        Deck list
+      </Link>
 
-      <a className="nav-menu__item" href="/">
-        <Link to="/wishlist">
-          Wishlist
-        </Link>
-      </a>
+      <Link to="/wishlist" className="nav-menu__item" >
+        Wishlist
+      </Link>
+
     </div>
   );
 };
