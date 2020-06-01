@@ -16,8 +16,13 @@ const NavMenu = ({isOpen, toggleNavMenu}) => {
         <NavMenuBtn isOpen={isOpen} toggleNavMenu={toggleNavMenu} />
       </div>
 
-      {pages.map(page => (
-        <Link to={page.url} className="nav-menu__item" onClick={toggleNavMenu}>
+      {pages.map((page, i) => (
+        <Link
+          to={page.url}
+          onClick={toggleNavMenu}
+          key={i}
+          className="nav-menu__item"
+        >
           {page.name}
         </Link>
       ))}
