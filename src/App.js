@@ -1,14 +1,10 @@
-import React, { useState } from 'react';
+import React, {useState} from 'react';
 import './App.css';
 import axios from 'axios';
 import CardList from './components/CardList/CardList';
 import Header from './components/Header/Header';
 
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route
-} from "react-router-dom";
+import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
 
 const App = () => {
   const [cards, setCards] = useState([]);
@@ -24,33 +20,30 @@ const App = () => {
 
     try {
       newCards = (await axios(apiSearch + filters.cardName)).data;
-    } catch (error) { }
+    } catch (error) {}
 
     setCards(newCards);
     setLoading(false);
   };
 
   return (
-    <>
-      <Router>
-        <Header searchCards={searchCards} loading={loading} />
-        <Switch>
+    <Router>
+      <Header searchCards={searchCards} loading={loading} />
 
-          <Route path="/decklist">
-            <h1>Esta es la página de deck list</h1>
-          </Route>
+      <Switch>
+        <Route path="/decklist">
+          <h1>Deck list page</h1>
+        </Route>
 
-          <Route path="/wishlist">
-            <h1>Esta es la página de wish list</h1>
-          </Route>
+        <Route path="/wishlist">
+          <h1>Wishlist page</h1>
+        </Route>
 
-          <Route path="/">
-            <CardList cards={cards} />
-          </Route>
-
-        </Switch>
-      </Router>
-    </>
+        <Route path="/">
+          <CardList cards={cards} />
+        </Route>
+      </Switch>
+    </Router>
   );
 };
 
