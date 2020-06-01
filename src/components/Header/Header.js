@@ -7,9 +7,7 @@ import NavMenuBtn from '../NavMenuBtn/NavMenuBtn';
 const Header = ({searchCards, loading}) => {
   const [isOpen, setIsOpen] = useState(false);
 
-  const toggleNavMenu = () => {
-    setIsOpen(!isOpen);
-  };
+  const toggleNavMenu = () => setIsOpen(!isOpen);
 
   return (
     <>
