@@ -7,8 +7,7 @@ import Header from './components/Header/Header';
 import {
   BrowserRouter as Router,
   Switch,
-  Route,
-  Link
+  Route
 } from "react-router-dom";
 
 const App = () => {
@@ -39,21 +38,16 @@ const App = () => {
 
           <Route path="/decklist">
             <h1>Esta es la página de deck list</h1>
-            {/* Here will be the component */}
           </Route>
+
           <Route path="/wishlist">
             <h1>Esta es la página de wish list</h1>
-            {/* Here will be the component */}
           </Route>
-          {/* All new pages should be here, the order is important,
-          the first one must be the homepage */}
-
-          {/* Home should be at the end right now. If you put it the first one
-          card list will appear in all pages */}
 
           <Route path="/">
             <CardList cards={cards} />
           </Route>
+
         </Switch>
       </Router>
     </>
