@@ -7,12 +7,14 @@ import NavMenuBtn from '../NavMenuBtn/NavMenuBtn';
 const Header = ({searchCards, loading}) => {
   const [isOpen, setIsOpen] = useState(false);
 
+  const toggleNavMenu = () => setIsOpen(!isOpen);
+
   return (
     <>
       <header>
         <div className="row">
           <div className="col">
-            <NavMenuBtn isOpen={isOpen} setIsOpen={setIsOpen} />
+            <NavMenuBtn isOpen={isOpen} toggleNavMenu={toggleNavMenu} />
           </div>
 
           <div className="col">
@@ -51,11 +53,11 @@ const Header = ({searchCards, loading}) => {
         </div>
       </header>
 
-      <NavMenu isOpen={isOpen} setIsOpen={setIsOpen} />
+      <NavMenu isOpen={isOpen} toggleNavMenu={toggleNavMenu} />
 
       <div
         className={isOpen ? 'backdrop open' : 'backdrop'}
-        onClick={() => setIsOpen(!isOpen)}
+        onClick={toggleNavMenu}
       ></div>
     </>
   );

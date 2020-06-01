@@ -4,6 +4,8 @@ import axios from 'axios';
 import CardList from './components/CardList/CardList';
 import Header from './components/Header/Header';
 
+import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
+
 const App = () => {
   const [cards, setCards] = useState([]);
   const [loading, setLoading] = useState(false);
@@ -25,10 +27,23 @@ const App = () => {
   };
 
   return (
-    <>
+    <Router>
       <Header searchCards={searchCards} loading={loading} />
-      <CardList cards={cards} />
-    </>
+
+      <Switch>
+        <Route path="/decklist">
+          <h1>Deck list page</h1>
+        </Route>
+
+        <Route path="/wishlist">
+          <h1>Wishlist page</h1>
+        </Route>
+
+        <Route path="/">
+          <CardList cards={cards} />
+        </Route>
+      </Switch>
+    </Router>
   );
 };
 

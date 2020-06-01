@@ -1,11 +1,11 @@
 import React from 'react';
 import './navMenuBtn.scss';
 
-const NavMenuBtn = ({isOpen, setIsOpen}) => {
+const NavMenuBtn = ({isOpen, toggleNavMenu}) => {
   return (
     <button
       className={isOpen ? 'nav-menu-btn open' : 'nav-menu-btn'}
-      onClick={() => setIsOpen(!isOpen)}
+      onClick={toggleNavMenu}
     >
       <svg
         className="bi bi-list"
