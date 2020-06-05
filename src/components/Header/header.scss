@@ -4,8 +4,11 @@ header {
   padding: 10px 20px;
   border-bottom: 2px solid $color2;
   background-color: $color1;
-  position: relative;
   z-index: 30;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
 }
 
 .backdrop {
