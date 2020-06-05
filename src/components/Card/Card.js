@@ -6,7 +6,10 @@ const Card = ({card}) => {
     <a data-name={card.id} href="#">
       <img
         className="card-img"
-        src={card.card_images[0].image_url_small}
+        src={card.card_images[0].image_url_small.replace(
+          'storage.googleapis.com/',
+          ''
+        )}
         alt={card.name}
       />
     </a>
