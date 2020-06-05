@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import './App.css';
 import axios from 'axios';
 import CardList from './components/CardList/CardList';
@@ -35,6 +35,10 @@ const App = () => {
     setCards(newCards);
     setLoading(false);
   };
+
+  useEffect(() => {
+    searchCards({fname: ''});
+  }, []);
 
   return (
     <Router>
