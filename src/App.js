@@ -37,7 +37,7 @@ const App = () => {
   };
 
   useEffect(() => {
-    searchCards({fname: ''});
+    searchCards();
   }, []);
 
   return (
