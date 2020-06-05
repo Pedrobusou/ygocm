@@ -1,13 +1,15 @@
+@import '../../variables.scss';
+
 header {
   padding: 10px 20px;
-  border-bottom: 2px solid brown;
-  background-color: goldenrod;
+  border-bottom: 2px solid $color2;
+  background-color: $color1;
   position: relative;
   z-index: 30;
 }
 
 .backdrop {
-  background-color: black;
+  background-color: #000000;
   position: fixed;
   top: 0;
   left: 0;
