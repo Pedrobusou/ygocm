@@ -9,7 +9,7 @@ const CardNameFilter = ({searchCards}) => {
 
   const handleSubmit = event => {
     event.preventDefault();
-    searchCards({cardName});
+    searchCards({fname: cardName});
   };
 
   return (
@@ -19,7 +19,6 @@ const CardNameFilter = ({searchCards}) => {
         placeholder="Introduce card name"
         onChange={handleChange}
         value={cardName}
-        required
       />
     </form>
   );
