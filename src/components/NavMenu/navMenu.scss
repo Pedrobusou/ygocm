@@ -1,3 +1,5 @@
+@import '../../variables.scss';
+
 .nav-menu {
   position: fixed;
   height: 100%;
@@ -5,8 +7,8 @@
   left: -250px;
   top: 0;
   transition: left 0.5s;
-  background-color: goldenrod;
-  border-right: 2px solid brown;
+  background-color: $color1;
+  border-right: 2px solid $color2;
   z-index: 20;
 
   &.open {
@@ -15,7 +17,7 @@
 
   .nav-menu__item {
     display: block;
-    border-bottom: 2px solid brown;
+    border-bottom: 2px solid $color2;
     padding: 16px;
     text-decoration: none;
     color: black;
@@ -23,6 +25,6 @@
   }
 
   a:hover {
-    background-color: brown;
+    background-color: $color2;
   }
 }
