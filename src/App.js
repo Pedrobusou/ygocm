@@ -10,7 +10,17 @@ const App = () => {
   const [cards, setCards] = useState([]);
   const [loading, setLoading] = useState(false);
 
-  const apiSearch = 'https://db.ygoprodeck.com/api/v5/cardinfo.php?fname=';
+  const apiSearch = 'https://db.ygoprodeck.com/api/v5/cardinfo.php?sort=new&';
+
+  const stringifyFilters = filters => {
+    const filtersArr = [];
+
+    for (const key in filters) {
+      filtersArr.push(`${key}=${filters[key]}`);
+    }
+
+    return filtersArr.join('&');
+  };
 
   //Could be turned into customHook with useeffect and filters state obj
   const searchCards = async filters => {
@@ -19,7 +29,7 @@ const App = () => {
     let newCards = [];
 
     try {
-      newCards = (await axios(apiSearch + filters.cardName)).data;
+      newCards = (await axios(apiSearch + stringifyFilters(filters))).data;
     } catch (error) {}
 
     setCards(newCards);

@@ -9,7 +9,7 @@ const CardNameFilter = ({searchCards}) => {
 
   const handleSubmit = event => {
     event.preventDefault();
-    searchCards({cardName});
+    searchCards({fname: cardName});
   };
 
   return (
