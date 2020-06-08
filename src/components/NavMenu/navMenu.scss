@@ -28,4 +28,9 @@
   a:hover {
     background-color: $color2;
   }
+
+  .selected {
+    background: darken($color: goldenrod, $amount: 10%);
+    font-weight: bold;
+  }
 }
