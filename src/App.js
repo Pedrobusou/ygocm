@@ -1,10 +1,10 @@
-import React, {useState, useEffect} from 'react';
+import React, { useState, useEffect } from 'react';
 import './App.css';
 import axios from 'axios';
 import CardList from './components/CardList/CardList';
 import Header from './components/Header/Header';
 
-import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
 const App = () => {
   const [cards, setCards] = useState([]);
@@ -30,7 +30,7 @@ const App = () => {
 
     try {
       newCards = (await axios(apiSearch + stringifyFilters(filters))).data;
-    } catch (error) {}
+    } catch (error) { }
 
     setCards(newCards);
     setLoading(false);
@@ -45,11 +45,11 @@ const App = () => {
       <Header searchCards={searchCards} loading={loading} />
 
       <Switch>
-        <Route path="/decklist">
+        <Route path="/decklist" >
           <h1>Deck list page</h1>
         </Route>
 
-        <Route path="/wishlist">
+        <Route path="/wishlist" >
           <h1>Wishlist page</h1>
         </Route>
 
