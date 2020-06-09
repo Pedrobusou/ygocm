@@ -1,8 +1,13 @@
 const PREFIX = 'ygocm_';
 
+/**
+ *
+ * @param {string} target
+ * @param {*} action
+ */
 const handler = (target, action) => {
   const key = PREFIX + target;
-  let cards = LocalStorage.getCards(key);
+  let cards = LocalStorage.getCards(target);
 
   cards = action(cards);
 
@@ -10,17 +15,30 @@ const handler = (target, action) => {
 };
 
 export class LocalStorage {
-  static add(id) {
-    const addCard = cards => [...cards, id];
-    return {to: target => handler(target, addCard)};
+  /**
+   *
+   * @param {string} cardId
+   * @param {string} target
+   */
+  static addCard(cardId, target) {
+    handler(target, cardIds => [...cardIds, cardId]);
   }
 
-  static delete(id) {
-    const deleteCard = cards => cards.filter(c => c !== id);
-    return {from: target => handler(target, deleteCard)};
+  /**
+   *
+   * @param {string} cardId
+   * @param {string} target
+   */
+  static deleteCard(cardId, target) {
+    handler(target, cardIds => cardIds.filter(c => c !== cardId));
   }
 
-  static getCards(key) {
-    return JSON.parse(localStorage.getItem(key)) || [];
+  /**
+   *
+   * @param {string} target
+   * @returns {[string]} cardIds
+   */
+  static getCards(target) {
+    return JSON.parse(localStorage.getItem(PREFIX + target)) || [];
   }
 }

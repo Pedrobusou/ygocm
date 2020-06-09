@@ -34,7 +34,7 @@ const App = () => {
     } catch (error) {}
 
     newCards.slice(0, 5).forEach(c => {
-      LocalStorage.add(c.id).to('wishlist');
+      LocalStorage.addCard(c.id, 'wishlist');
     });
 
     setCards(newCards);
