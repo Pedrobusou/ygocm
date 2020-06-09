@@ -1,6 +1,6 @@
 import React from 'react';
 import './navMenu.scss';
-import {Link} from 'react-router-dom';
+import {NavLink} from 'react-router-dom';
 
 const NavMenu = ({isOpen, toggleNavMenu}) => {
   const pages = [
@@ -12,14 +12,16 @@ const NavMenu = ({isOpen, toggleNavMenu}) => {
   return (
     <div className={isOpen ? 'nav-menu open' : 'nav-menu'}>
       {pages.map((page, i) => (
-        <Link
+        <NavLink
+          exact
           to={page.url}
           onClick={toggleNavMenu}
           key={i}
           className="nav-menu__item"
+          activeClassName="selected"
         >
           {page.name}
-        </Link>
+        </NavLink>
       ))}
     </div>
   );
