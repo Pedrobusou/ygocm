@@ -5,6 +5,7 @@ import CardList from './components/CardList/CardList';
 import Header from './components/Header/Header';
 
 import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
+import {LocalStorage} from './LocalStorage';
 
 const App = () => {
   const [cards, setCards] = useState([]);
@@ -31,6 +32,10 @@ const App = () => {
     try {
       newCards = (await axios(apiSearch + stringifyFilters(filters))).data;
     } catch (error) {}
+
+    newCards.slice(0, 5).forEach(c => {
+      LocalStorage.add(c.id).to('wishlist');
+    });
 
     setCards(newCards);
     setLoading(false);
