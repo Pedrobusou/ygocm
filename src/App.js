@@ -7,6 +7,8 @@ import Header from './components/Header/Header';
 import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
 import {LocalStorage} from './LocalStorage';
 
+import DocumentTitle from 'react-document-title';
+
 const App = () => {
   const [cards, setCards] = useState([]);
   const [loading, setLoading] = useState(false);
@@ -51,15 +53,21 @@ const App = () => {
 
       <Switch>
         <Route path="/decklist">
-          <h1>Deck list page</h1>
+          <DocumentTitle title="Decklist">
+            <h1>Deck list page</h1>
+          </DocumentTitle>
         </Route>
 
         <Route path="/wishlist">
-          <h1>Wishlist page</h1>
+          <DocumentTitle title="Wishlist">
+            <h1>Wishlist page</h1>
+          </DocumentTitle>
         </Route>
 
         <Route path="/">
-          <CardList cards={cards} />
+          <DocumentTitle title="Homepage">
+            <CardList cards={cards} />
+          </DocumentTitle>
         </Route>
       </Switch>
     </Router>
